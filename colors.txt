@@ -1,0 +1,36 @@
+\
+#845ec2	#7755af	#6a4b9b	#5c4288	#4f3874	#422f61	#35264e	#281c3a	#1a1327	#0d0913	#000000
+#845ec2	#906ec8	#9d7ece	#a98ed4	#b59eda	#c2afe1	#cebfe7	#dacfed	#e6dff3	#f3eff9	#ffffff
+\
+#d65db1	#c1549f	#ab4a8e	#96417c	#80386a	#6b2f59	#562547	#401c35	#2b1323	#150912	#000000
+#d65db1	#da6db9	#de7dc1	#e28ec8	#e69ed0	#ebaed8	#efbee0	#f3cee8	#f7dfef	#fbeff7	#ffffff
+\
+#ff6f91	#e66483	#cc5974	#b34e66	#994357	#803849	#662c3a	#4c212b	#33161d	#190b0e	#000000
+#ff6f91	#ff7d9c	#ff8ca7	#ff9ab2	#ffa9bd	#ffb7c8	#ffc5d3	#ffd4de	#ffe2e9	#fff1f4	#ffffff
+\
+#ff9671	#e68766	#cc785a	#b3694f	#995a44	#804b39	#663c2d	#4c2d22	#331e17	#190f0b	#000000
+#ff9671	#ffa17f	#ffab8d	#ffb69c	#ffc0aa	#ffcbb8	#ffd5c6	#ffe0d4	#ffeae3	#fff5f1	#ffffff
+\
+#ffc75f	#e6b356	#cc9f4c	#b38b43	#997739	#806430	#665026	#4c3c1c	#332813	#191409	#000000
+#ffc75f	#ffcd6f	#ffd27f	#ffd88f	#ffdd9f	#ffe3af	#ffe9bf	#ffeecf	#fff4df	#fff9ef	#ffffff
+\
+#f9f871	#e0df66	#c7c65a	#aeae4f	#959544	#7d7c39	#64632d	#4b4a22	#323217	#19190b	#000000
+#f9f871	#faf97f	#faf98d	#fbfa9c	#fbfbaa	#fcfcb8	#fdfcc6	#fdfdd4	#fefee3	#fefef1	#ffffff
+\
+#ff0000	#e60000	#cc0000	#b30000	#990000	#800000	#660000	#4c0000	#330000	#190000	#000000
+#ff0000	#ff1a1a	#ff3333	#ff4d4d	#ff6666	#ff8080	#ff9999	#ffb3b3	#ffcccc	#ffe6e6	#ffffff
+\
+#ee005f	#d60056	#be004c	#a70043	#8f0039	#770030	#5f0026	#47001c	#300013	#180009	#000000
+#ee005f	#f01a6f	#f1337f	#f34d8f	#f5669f	#f780af	#f899bf	#fab3cf	#fcccdf	#fde6ef	#ffffff
+\
+#b62a8f	#a42681	#922272	#7f1d64	#6d1956	#5b1548	#491139	#370d2b	#24081d	#12040e	#000000
+#b62a8f	#bd3f9a	#c555a5	#cc6ab1	#d37fbc	#db95c7	#e2aad2	#e9bfdd	#f0d4e9	#f8eaf4	#ffffff
+\
+#6d4b9a	#62448b	#573c7b	#4c356c	#412d5c	#37264d	#2c1e3e	#21162e	#160f1f	#0b070f	#000000
+#6d4b9a	#7c5da4	#8a6fae	#9981b8	#a793c2	#b6a5cd	#c5b7d7	#d3c9e1	#e2dbeb	#f0edf5	#ffffff
+\
+#325082	#2d4875	#284068	#23385b	#1e304e	#192841	#142034	#0f1827	#0a101a	#05080d	#000000
+#325082	#47628f	#5b739b	#7085a8	#8496b4	#99a8c1	#adb9cd	#c2cbda	#d6dce6	#ebeef3	#ffffff
+\
+#2f4858	#2a414f	#263a46	#21323e	#1c2b35	#18242c	#131d23	#0e161a	#090e12	#050709	#000000
+#2f4858	#445a69	#596d79	#6d7f8a	#82919b	#97a4ac	#acb6bc	#c1c8cd	#d5dade	#eaedee	#ffffff
