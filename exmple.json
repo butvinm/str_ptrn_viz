@@ -1,0 +1,104 @@
+[
+    {
+        "nodes": [
+            {
+                "symbolSet": "LITERAL",
+                "quantifier": 1,
+                "symbol": "+"
+            },
+            {
+                "symbolSet": "LITERAL",
+                "quantifier": 1,
+                "symbol": "7"
+            },
+            {
+                "symbolSet": "LITERAL",
+                "quantifier": 1,
+                "symbol": "9"
+            },
+            {
+                "symbolSet": "DIGIT",
+                "quantifier": 9
+            }
+        ],
+        "frequency": 45.5
+    },
+    {
+        "nodes": [
+            {
+                "symbolSet": "LITERAL",
+                "quantifier": 1,
+                "symbol": "8"
+            },
+            {
+                "symbolSet": "LITERAL",
+                "quantifier": 1,
+                "symbol": " "
+            },
+            {
+                "symbolSet": "LITERAL",
+                "quantifier": 1,
+                "symbol": "("
+            },
+            {
+                "symbolSet": "LITERAL",
+                "quantifier": 1,
+                "symbol": "9"
+            },
+            {
+                "symbolSet": "DIGIT",
+                "quantifier": 2
+            },
+            {
+                "symbolSet": "LITERAL",
+                "quantifier": 1,
+                "symbol": ")"
+            },
+            {
+                "symbolSet": "LITERAL",
+                "quantifier": 1,
+                "symbol": " "
+            },
+            {
+                "symbolSet": "DIGIT",
+                "quantifier": 3
+            },
+            {
+                "symbolSet": "LITERAL",
+                "quantifier": 1,
+                "symbol": "-"
+            },
+            {
+                "symbolSet": "DIGIT",
+                "quantifier": 2
+            },
+            {
+                "symbolSet": "LITERAL",
+                "quantifier": 1,
+                "symbol": "-"
+            },
+            {
+                "symbolSet": "DIGIT",
+                "quantifier": 2
+            }
+        ],
+        "frequency": 10.5
+    },
+    {
+        "nodes": [
+            {
+                "symbolSet": "RU_UPPER",
+                "quantifier": 1
+            },
+            {
+                "symbolSet": "DIGIT",
+                "quantifier": 3
+            },
+            {
+                "symbolSet": "RU_UPPER",
+                "quantifier": 2
+            }
+        ],
+        "frequency": 0.69
+    }
+]
