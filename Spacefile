@@ -1,0 +1,10 @@
+# Spacefile Docs: https://go.deta.dev/docs/spacefile/v0
+v: 0
+
+micros:
+    - name: Main
+      src: dist
+      serve: .
+      engine: static
+      primary: true
+      public: true
