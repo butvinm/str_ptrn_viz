@@ -5,18 +5,21 @@ import Color exposing (Color, pickColor)
 import Html exposing (Html, div, span, text)
 import Html.Attributes exposing (style)
 import Pattern exposing (..)
-
+import Json.Decode as JD
+import Html exposing (textarea)
+import Html.Events exposing (onInput)
+import Html exposing (p)
 
 
 -- MAIN
 
 
-main : Program () Model msg
+main : Program () Model Msg
 main =
     sandbox
         { init = init
         , view = view
-        , update = \_ model -> model
+        , update = update
         }
 
 
@@ -24,45 +27,61 @@ main =
 -- MODEL
 
 
-type alias Model = { patterns : List Pattern }
+type alias Model = { patterns : List Pattern, patternsParseError: String }
 
 
 init : Model
 init =
     { patterns =
         [ { nodes =
-                [ Node (LITERAL '+') 1
-                , Node (LITERAL '7') 1
-                , Node (LITERAL '9') 1
-                , Node DIGIT 9
+                [ Node LITERAL 1 (Just '+')
+                , Node LITERAL 1 (Just '7')
+                , Node LITERAL 1 (Just '9')
+                , Node DIGIT 9 Nothing
                 ]
           , frequency = 45.5
           }
         , { nodes =
-                [ Node (LITERAL '8') 1
-                , Node (LITERAL ' ') 1
-                , Node (LITERAL '(') 1
-                , Node (LITERAL '9') 1
-                , Node DIGIT 2
-                , Node (LITERAL ')') 1
-                , Node (LITERAL ' ') 1
-                , Node DIGIT 3
-                , Node (LITERAL '-') 1
-                , Node DIGIT 2
-                , Node (LITERAL '-') 1
-                , Node DIGIT 2
+                [ Node LITERAL 1 (Just '8')
+                , Node LITERAL 1 (Just ' ')
+                , Node LITERAL 1 (Just '(')
+                , Node LITERAL 1 (Just '9')
+                , Node DIGIT 2 Nothing
+                , Node LITERAL 1 (Just ')')
+                , Node LITERAL 1 (Just ' ')
+                , Node DIGIT 3 Nothing
+                , Node LITERAL 1 (Just '-')
+                , Node DIGIT 2 Nothing
+                , Node LITERAL 1 (Just '-')
+                , Node DIGIT 2 Nothing
                 ]
           , frequency = 10.5
           }
         , { nodes =
-                [ Node RU_UPPER 1
-                , Node DIGIT 3
-                , Node RU_UPPER 2
+                [ Node RU_UPPER 1 Nothing
+                , Node DIGIT 3 Nothing
+                , Node RU_UPPER 2 Nothing
                 ]
           , frequency = 0.69
           }
         ]
+    , patternsParseError = ""
     }
+
+
+
+-- UPDATE
+
+
+type Msg = UpdatePatterns String
+
+
+update : Msg -> Model -> Model
+update msg model =
+    case msg of
+        UpdatePatterns json -> case JD.decodeString pattersDecoder json of
+            Ok patterns -> { model | patterns = patterns, patternsParseError = "" }
+            Err error -> { model | patternsParseError = JD.errorToString error }
 
 
 -- VIEW
@@ -76,7 +95,7 @@ fontFamily: String
 fontFamily = "Monospace"
 
 
-nodeBox : String -> Color -> Html msg
+nodeBox : String -> Color -> Html Msg
 nodeBox nodeText color =
     span
         [ style "background-color" color.light
@@ -88,8 +107,8 @@ nodeBox nodeText color =
         [ text nodeText ]
 
 
-viewNode : Color -> Node -> Html msg
-viewNode color { symbolSet, quantifier } =
+viewNode : Color -> Node -> Html Msg
+viewNode color { symbolSet, quantifier, symbol } =
     let
         quantifierText =
             if quantifier > 1 then
@@ -99,20 +118,21 @@ viewNode color { symbolSet, quantifier } =
 
         nodeSymbolText =
             case symbolSet of
-                LITERAL symbol ->
-                    String.fromChar (if symbol == ' ' then '\u{00A0}' else symbol)
+                LITERAL -> case symbol of
+                    Just char -> String.fromChar char
+                    Nothing -> "error"
                 _ ->
                     symbolRegex symbolSet
     in
     nodeBox (nodeSymbolText ++ quantifierText) color
 
 
-viewNodes : List Node -> Html msg
+viewNodes : List Node -> Html Msg
 viewNodes nodes =
     div [] <| List.indexedMap (pickColor >> viewNode) nodes
 
 
-viewFrequency : Float -> Html msg
+viewFrequency : Float -> Html Msg
 viewFrequency frequency =
     span
         [ style "font-size" fontSize
@@ -121,7 +141,7 @@ viewFrequency frequency =
         [ text <| String.fromFloat frequency ++ "%" ]
 
 
-viewPattern : Pattern -> Html msg
+viewPattern : Pattern -> Html Msg
 viewPattern { nodes, frequency } =
     div
         [ style "display" "flex"
@@ -132,13 +152,29 @@ viewPattern { nodes, frequency } =
         ]
 
 
-view : Model -> Html msg
-view { patterns } =
+viewPatterns : List Pattern -> Html Msg
+viewPatterns patterns =
     div
         [ style "display" "flex"
         , style "flex-direction" "column"
         , style "gap" "24pt"
         , style "padding" "12pt"
+        , style "width" "content"
         ]
     <|
         List.map viewPattern patterns
+
+
+view : Model -> Html Msg
+view { patterns, patternsParseError } =
+    div [ style "display" "flex"
+        , style "align-items" "stretch"
+        , style "gap" "24pt"
+        , style "padding" "12pt"
+        ]
+        [ div [ style "width" "40%", style "height" "50vh" ]
+            [ textarea [ onInput UpdatePatterns, style "width" "100%", style "height" "50%"] []
+            , p [ style "color" "red" ] [text patternsParseError]
+            ]
+        , viewPatterns patterns
+        ]
