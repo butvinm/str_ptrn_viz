@@ -34,35 +34,35 @@ init : Model
 init =
     { patterns =
         [ { nodes =
-                [ Node LITERAL 1 (Just '+')
-                , Node LITERAL 1 (Just '7')
-                , Node LITERAL 1 (Just '9')
-                , Node DIGIT 9 Nothing
+                [ Node LITERAL 1 ['+']
+                , Node LITERAL 1 ['7']
+                , Node LITERAL 1 ['9']
+                , Node DIGIT 9 []
                 ]
-          , frequency = 45.5
+          , percentage = 45.5
           }
         , { nodes =
-                [ Node LITERAL 1 (Just '8')
-                , Node LITERAL 1 (Just ' ')
-                , Node LITERAL 1 (Just '(')
-                , Node LITERAL 1 (Just '9')
-                , Node DIGIT 2 Nothing
-                , Node LITERAL 1 (Just ')')
-                , Node LITERAL 1 (Just ' ')
-                , Node DIGIT 3 Nothing
-                , Node LITERAL 1 (Just '-')
-                , Node DIGIT 2 Nothing
-                , Node LITERAL 1 (Just '-')
-                , Node DIGIT 2 Nothing
+                [ Node LITERAL 1 ['8']
+                , Node LITERAL 1 [' ']
+                , Node LITERAL 1 ['(']
+                , Node LITERAL 1 ['9']
+                , Node DIGIT 2 []
+                , Node LITERAL 1 [')']
+                , Node LITERAL 1 [' ']
+                , Node DIGIT 3 []
+                , Node LITERAL 1 ['-']
+                , Node DIGIT 2 []
+                , Node LITERAL 1 ['-']
+                , Node DIGIT 2 []
                 ]
-          , frequency = 10.5
+          , percentage = 10.5
           }
         , { nodes =
-                [ Node RU_UPPER 1 Nothing
-                , Node DIGIT 3 Nothing
-                , Node RU_UPPER 2 Nothing
+                [ Node RU_UPPER 1 []
+                , Node DIGIT 3 []
+                , Node RU_UPPER 2 []
                 ]
-          , frequency = 0.69
+          , percentage = 0.69
           }
         ]
     , patternsParseError = ""
@@ -108,7 +108,7 @@ nodeBox nodeText color =
 
 
 viewNode : Color -> Node -> Html Msg
-viewNode color { symbolSet, quantifier, symbol } =
+viewNode color { symbolSet, quantifier, symbols } =
     let
         quantifierText =
             if quantifier > 1 then
@@ -118,7 +118,7 @@ viewNode color { symbolSet, quantifier, symbol } =
 
         nodeSymbolText =
             case symbolSet of
-                LITERAL -> case symbol of
+                LITERAL -> case List.head symbols of
                     Just char -> String.fromChar char
                     Nothing -> "error"
                 _ ->
@@ -142,12 +142,12 @@ viewFrequency frequency =
 
 
 viewPattern : Pattern -> Html Msg
-viewPattern { nodes, frequency } =
+viewPattern { nodes, percentage } =
     div
         [ style "display" "flex"
         , style "gap" "24pt"
         ]
-        [ viewFrequency frequency
+        [ viewFrequency percentage
         , viewNodes nodes
         ]
 

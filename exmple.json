@@ -4,101 +4,131 @@
             {
                 "symbolSet": "LITERAL",
                 "quantifier": 1,
-                "symbol": "+"
+                "symbols": [
+                    "+"
+                ]
             },
             {
                 "symbolSet": "LITERAL",
                 "quantifier": 1,
-                "symbol": "7"
+                "symbols": [
+                    "7"
+                ]
             },
             {
                 "symbolSet": "LITERAL",
                 "quantifier": 1,
-                "symbol": "9"
+                "symbols": [
+                    "9"
+                ]
             },
             {
                 "symbolSet": "DIGIT",
-                "quantifier": 9
+                "quantifier": 9,
+                "symbols": []
             }
         ],
-        "frequency": 45.5
+        "percentage": 45.5
     },
     {
         "nodes": [
             {
                 "symbolSet": "LITERAL",
                 "quantifier": 1,
-                "symbol": "8"
+                "symbols": [
+                    "8"
+                ]
             },
             {
                 "symbolSet": "LITERAL",
                 "quantifier": 1,
-                "symbol": " "
+                "symbols": [
+                    " "
+                ]
             },
             {
                 "symbolSet": "LITERAL",
                 "quantifier": 1,
-                "symbol": "("
+                "symbols": [
+                    "("
+                ]
             },
             {
                 "symbolSet": "LITERAL",
                 "quantifier": 1,
-                "symbol": "9"
+                "symbols": [
+                    "9"
+                ]
             },
             {
                 "symbolSet": "DIGIT",
-                "quantifier": 2
+                "quantifier": 2,
+                "symbols": []
             },
             {
                 "symbolSet": "LITERAL",
                 "quantifier": 1,
-                "symbol": ")"
+                "symbols": [
+                    ")"
+                ]
             },
             {
                 "symbolSet": "LITERAL",
                 "quantifier": 1,
-                "symbol": " "
+                "symbols": [
+                    " "
+                ]
             },
             {
                 "symbolSet": "DIGIT",
-                "quantifier": 3
+                "quantifier": 3,
+                "symbols": []
             },
             {
                 "symbolSet": "LITERAL",
                 "quantifier": 1,
-                "symbol": "-"
+                "symbols": [
+                    "-"
+                ]
             },
             {
                 "symbolSet": "DIGIT",
-                "quantifier": 2
+                "quantifier": 2,
+                "symbols": []
             },
             {
                 "symbolSet": "LITERAL",
                 "quantifier": 1,
-                "symbol": "-"
+                "symbols": [
+                    "-"
+                ]
             },
             {
                 "symbolSet": "DIGIT",
-                "quantifier": 2
+                "quantifier": 2,
+                "symbols": []
             }
         ],
-        "frequency": 10.5
+        "percentage": 10.5
     },
     {
         "nodes": [
             {
                 "symbolSet": "RU_UPPER",
-                "quantifier": 1
+                "quantifier": 1,
+                "symbols": []
             },
             {
                 "symbolSet": "DIGIT",
-                "quantifier": 3
+                "quantifier": 3,
+                "symbols": []
             },
             {
                 "symbolSet": "RU_UPPER",
-                "quantifier": 2
+                "quantifier": 2,
+                "symbols": []
             }
         ],
-        "frequency": 0.69
+        "percentage": 0.69
     }
 ]

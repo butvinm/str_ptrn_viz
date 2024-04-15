@@ -33,10 +33,10 @@ symbolRegex symbolSet =
         _        -> "error"
 
 
-type alias Node = { symbolSet : SymbolSet, quantifier : Int, symbol: Maybe Char }
+type alias Node = { symbolSet : SymbolSet, quantifier : Int, symbols: List Char }
 
 
-type alias Pattern = { nodes : List Node, frequency : Float }
+type alias Pattern = { nodes : List Node, percentage : Float }
 
 
 symbolSetDecoder : JD.Decoder SymbolSet
@@ -74,14 +74,14 @@ nodeDecoder =
     JD.map3 Node
         (JD.field "symbolSet" symbolSetDecoder)
         (JD.field "quantifier" JD.int)
-        (JD.maybe (JD.field "symbol" nodeSymbolDecoder))
+        (JD.field "symbols" (JD.list nodeSymbolDecoder))
 
 
 patterDecoder : JD.Decoder Pattern
 patterDecoder =
     JD.map2 Pattern
         (JD.field "nodes" (JD.list nodeDecoder))
-        (JD.field "frequency" JD.float)
+        (JD.field "percentage" JD.float)
 
 
 pattersDecoder : JD.Decoder (List Pattern)
