@@ -37,32 +37,32 @@ init =
                 [ Node LITERAL 1 ['+']
                 , Node LITERAL 1 ['7']
                 , Node LITERAL 1 ['9']
-                , Node DIGIT 9 []
+                , Node DIGITS 9 []
                 ]
-          , percentage = 45.5
+          , percentage = 0.455
           }
         , { nodes =
                 [ Node LITERAL 1 ['8']
                 , Node LITERAL 1 [' ']
                 , Node LITERAL 1 ['(']
                 , Node LITERAL 1 ['9']
-                , Node DIGIT 2 []
+                , Node DIGITS 2 []
                 , Node LITERAL 1 [')']
                 , Node LITERAL 1 [' ']
-                , Node DIGIT 3 []
+                , Node DIGITS 3 []
                 , Node LITERAL 1 ['-']
-                , Node DIGIT 2 []
+                , Node DIGITS 2 []
                 , Node LITERAL 1 ['-']
-                , Node DIGIT 2 []
+                , Node DIGITS 2 []
                 ]
-          , percentage = 10.5
+          , percentage = 0.105
           }
         , { nodes =
                 [ Node RU_UPPER 1 []
-                , Node DIGIT 3 []
+                , Node DIGITS 3 []
                 , Node RU_UPPER 2 []
                 ]
-          , percentage = 0.69
+          , percentage = 0.0069
           }
         ]
     , patternsParseError = ""
@@ -132,13 +132,13 @@ viewNodes nodes =
     div [] <| List.indexedMap (pickColor >> viewNode) nodes
 
 
-viewFrequency : Float -> Html Msg
-viewFrequency frequency =
+viewPercentage : Float -> Html Msg
+viewPercentage percentage =
     span
         [ style "font-size" fontSize
         , style "font-family" fontFamily
         ]
-        [ text <| String.fromFloat frequency ++ "%" ]
+        [ text <| String.fromFloat (percentage * 100) ++ "%" ]
 
 
 viewPattern : Pattern -> Html Msg
@@ -147,7 +147,7 @@ viewPattern { nodes, percentage } =
         [ style "display" "flex"
         , style "gap" "24pt"
         ]
-        [ viewFrequency percentage
+        [ viewPercentage percentage
         , viewNodes nodes
         ]
 

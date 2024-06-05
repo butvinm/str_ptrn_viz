@@ -2,133 +2,425 @@
     {
         "nodes": [
             {
+                "symbolSet": "WORD",
+                "symbols": [
+                    "3",
+                    "0",
+                    "a",
+                    "5",
+                    "2",
+                    "8",
+                    "e",
+                    "4",
+                    "9",
+                    "d",
+                    "1",
+                    "7",
+                    "f",
+                    "c",
+                    "b",
+                    "6"
+                ],
+                "quantifier": 8
+            },
+            {
                 "symbolSet": "LITERAL",
-                "quantifier": 1,
+                "symbols": [
+                    "-"
+                ],
+                "quantifier": 1
+            },
+            {
+                "symbolSet": "WORD",
+                "symbols": [
+                    "3",
+                    "0",
+                    "a",
+                    "5",
+                    "2",
+                    "8",
+                    "e",
+                    "4",
+                    "9",
+                    "d",
+                    "1",
+                    "7",
+                    "f",
+                    "c",
+                    "b",
+                    "6"
+                ],
+                "quantifier": 4
+            },
+            {
+                "symbolSet": "LITERAL",
+                "symbols": [
+                    "-"
+                ],
+                "quantifier": 1
+            },
+            {
+                "symbolSet": "LITERAL",
+                "symbols": [
+                    "4"
+                ],
+                "quantifier": 1
+            },
+            {
+                "symbolSet": "WORD",
+                "symbols": [
+                    "3",
+                    "0",
+                    "a",
+                    "5",
+                    "2",
+                    "8",
+                    "e",
+                    "4",
+                    "9",
+                    "d",
+                    "1",
+                    "7",
+                    "f",
+                    "c",
+                    "b",
+                    "6"
+                ],
+                "quantifier": 3
+            },
+            {
+                "symbolSet": "LITERAL",
+                "symbols": [
+                    "-"
+                ],
+                "quantifier": 1
+            },
+            {
+                "symbolSet": "WORD",
+                "symbols": [
+                    "7",
+                    "3",
+                    "f",
+                    "0",
+                    "a",
+                    "c",
+                    "5",
+                    "b",
+                    "2",
+                    "8",
+                    "6",
+                    "e",
+                    "4",
+                    "9",
+                    "d",
+                    "1"
+                ],
+                "quantifier": 4
+            },
+            {
+                "symbolSet": "LITERAL",
+                "symbols": [
+                    "-"
+                ],
+                "quantifier": 1
+            },
+            {
+                "symbolSet": "WORD",
+                "symbols": [
+                    "3",
+                    "0",
+                    "a",
+                    "5",
+                    "2",
+                    "8",
+                    "e",
+                    "4",
+                    "9",
+                    "d",
+                    "1",
+                    "7",
+                    "f",
+                    "c",
+                    "b",
+                    "6"
+                ],
+                "quantifier": 12
+            }
+        ],
+        "percentage": 1.0,
+        "regex": "^\\w{8}\\-\\w{4}\\-4\\w{3}\\-\\w{4}\\-\\w{12}$",
+        "example": "cdf29eb9-ff0c-4700-99f8-8210d0518e1b"
+    },
+    {
+        "nodes": [
+            {
+                "symbolSet": "LITERAL",
                 "symbols": [
                     "+"
-                ]
+                ],
+                "quantifier": 1
             },
             {
                 "symbolSet": "LITERAL",
-                "quantifier": 1,
                 "symbols": [
                     "7"
-                ]
+                ],
+                "quantifier": 1
             },
             {
                 "symbolSet": "LITERAL",
-                "quantifier": 1,
                 "symbols": [
                     "9"
-                ]
+                ],
+                "quantifier": 1
             },
             {
-                "symbolSet": "DIGIT",
-                "quantifier": 9,
-                "symbols": []
+                "symbolSet": "DIGITS",
+                "symbols": [
+                    "7",
+                    "3",
+                    "0",
+                    "5",
+                    "2",
+                    "8",
+                    "6",
+                    "4",
+                    "9",
+                    "1"
+                ],
+                "quantifier": 9
             }
         ],
-        "percentage": 45.5
+        "percentage": 1.0,
+        "regex": "^\\+79[0-9]{9}$",
+        "example": "+79825296959"
     },
     {
         "nodes": [
             {
                 "symbolSet": "LITERAL",
-                "quantifier": 1,
                 "symbols": [
                     "8"
-                ]
+                ],
+                "quantifier": 1
             },
             {
                 "symbolSet": "LITERAL",
-                "quantifier": 1,
                 "symbols": [
                     " "
-                ]
+                ],
+                "quantifier": 1
             },
             {
                 "symbolSet": "LITERAL",
-                "quantifier": 1,
                 "symbols": [
                     "("
-                ]
+                ],
+                "quantifier": 1
             },
             {
                 "symbolSet": "LITERAL",
-                "quantifier": 1,
                 "symbols": [
                     "9"
-                ]
+                ],
+                "quantifier": 1
             },
             {
-                "symbolSet": "DIGIT",
-                "quantifier": 2,
-                "symbols": []
+                "symbolSet": "DIGITS",
+                "symbols": [
+                    "7",
+                    "3",
+                    "0",
+                    "5",
+                    "2",
+                    "8",
+                    "6",
+                    "4",
+                    "9",
+                    "1"
+                ],
+                "quantifier": 2
             },
             {
                 "symbolSet": "LITERAL",
-                "quantifier": 1,
                 "symbols": [
                     ")"
-                ]
+                ],
+                "quantifier": 1
             },
             {
                 "symbolSet": "LITERAL",
-                "quantifier": 1,
                 "symbols": [
                     " "
-                ]
+                ],
+                "quantifier": 1
             },
             {
-                "symbolSet": "DIGIT",
-                "quantifier": 3,
-                "symbols": []
+                "symbolSet": "DIGITS",
+                "symbols": [
+                    "7",
+                    "3",
+                    "0",
+                    "5",
+                    "2",
+                    "8",
+                    "6",
+                    "4",
+                    "9",
+                    "1"
+                ],
+                "quantifier": 3
             },
             {
                 "symbolSet": "LITERAL",
-                "quantifier": 1,
                 "symbols": [
                     "-"
-                ]
+                ],
+                "quantifier": 1
             },
             {
-                "symbolSet": "DIGIT",
-                "quantifier": 2,
-                "symbols": []
+                "symbolSet": "DIGITS",
+                "symbols": [
+                    "7",
+                    "3",
+                    "0",
+                    "5",
+                    "2",
+                    "8",
+                    "6",
+                    "4",
+                    "9",
+                    "1"
+                ],
+                "quantifier": 2
             },
             {
                 "symbolSet": "LITERAL",
-                "quantifier": 1,
                 "symbols": [
                     "-"
-                ]
+                ],
+                "quantifier": 1
             },
             {
-                "symbolSet": "DIGIT",
-                "quantifier": 2,
-                "symbols": []
+                "symbolSet": "DIGITS",
+                "symbols": [
+                    "7",
+                    "3",
+                    "0",
+                    "5",
+                    "2",
+                    "8",
+                    "6",
+                    "4",
+                    "9",
+                    "1"
+                ],
+                "quantifier": 2
             }
         ],
-        "percentage": 10.5
+        "percentage": 1.0,
+        "regex": "^8\\ \\(9[0-9]{2}\\)\\ [0-9]{3}\\-[0-9]{2}\\-[0-9]{2}$",
+        "example": "8 (958) 829-95-94"
     },
     {
         "nodes": [
             {
                 "symbolSet": "RU_UPPER",
-                "quantifier": 1,
-                "symbols": []
+                "symbols": [
+                    "Ю",
+                    "Ы",
+                    "Д",
+                    "Ё",
+                    "Р",
+                    "Ф",
+                    "Г",
+                    "В",
+                    "Ч",
+                    "И",
+                    "К",
+                    "Ш",
+                    "Э",
+                    "Я",
+                    "Ъ",
+                    "Щ",
+                    "П",
+                    "Ц",
+                    "Н",
+                    "С",
+                    "А",
+                    "Т",
+                    "Х",
+                    "Б",
+                    "Е",
+                    "З",
+                    "М",
+                    "Л",
+                    "У",
+                    "Ж",
+                    "О",
+                    "Й",
+                    "Ь"
+                ],
+                "quantifier": 1
             },
             {
-                "symbolSet": "DIGIT",
-                "quantifier": 3,
-                "symbols": []
+                "symbolSet": "DIGITS",
+                "symbols": [
+                    "7",
+                    "3",
+                    "0",
+                    "5",
+                    "2",
+                    "8",
+                    "6",
+                    "4",
+                    "9",
+                    "1"
+                ],
+                "quantifier": 3
             },
             {
                 "symbolSet": "RU_UPPER",
-                "quantifier": 2,
-                "symbols": []
+                "symbols": [
+                    "Ю",
+                    "Ы",
+                    "Д",
+                    "Ё",
+                    "Р",
+                    "Ф",
+                    "Г",
+                    "В",
+                    "Ч",
+                    "И",
+                    "К",
+                    "Ш",
+                    "Э",
+                    "Ъ",
+                    "Я",
+                    "Щ",
+                    "П",
+                    "Ц",
+                    "Н",
+                    "С",
+                    "А",
+                    "Т",
+                    "Х",
+                    "Б",
+                    "Е",
+                    "З",
+                    "М",
+                    "Л",
+                    "У",
+                    "Ж",
+                    "О",
+                    "Й",
+                    "Ь"
+                ],
+                "quantifier": 2
             }
         ],
-        "percentage": 0.69
+        "percentage": 1.0,
+        "regex": "^[А-ЯЁ][0-9]{3}[А-ЯЁ]{2}$",
+        "example": "Е274ТЬ"
     }
 ]

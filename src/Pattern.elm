@@ -4,32 +4,28 @@ import Json.Decode as JD
 
 
 type SymbolSet
-    = SYMBOL
-    | LITERAL
+    = LITERAL
     | WORD
-    | DIGIT
-    | ALPHA
+    | DIGITS
     | EN
-    | RU
     | EN_UPPER
-    | RU_UPPER
     | EN_LOWER
+    | RU
+    | RU_UPPER
     | RU_LOWER
 
 
 symbolRegex : SymbolSet -> String
 symbolRegex symbolSet =
     case symbolSet of
-        SYMBOL   -> "punct|space"
-        WORD     -> "alnum"
-        ALPHA    -> "alpha"
+        WORD     -> "\\w"
         EN       -> "[A-Za-z]"
         EN_UPPER -> "[A-Z]"
         EN_LOWER -> "[a-z]"
-        RU       -> "[А-Яа-я]"
-        RU_UPPER -> "[А-Я]"
-        RU_LOWER -> "[а-я]"
-        DIGIT    -> "digit"
+        RU       -> "[А-Яа-яЁё]"
+        RU_UPPER -> "[А-ЯЁ]"
+        RU_LOWER -> "[а-яё]"
+        DIGITS   -> "[0-9]"
         _        -> "error"
 
 
@@ -43,11 +39,9 @@ symbolSetDecoder : JD.Decoder SymbolSet
 symbolSetDecoder =
     let
         strToSymbolSet = \str -> case str of
-            "SYMBOL"   -> JD.succeed SYMBOL
             "LITERAL"  -> JD.succeed LITERAL
             "WORD"     -> JD.succeed WORD
-            "DIGIT"    -> JD.succeed DIGIT
-            "ALPHA"    -> JD.succeed ALPHA
+            "DIGITS"   -> JD.succeed DIGITS
             "EN"       -> JD.succeed EN
             "RU"       -> JD.succeed RU
             "EN_UPPER" -> JD.succeed EN_UPPER
